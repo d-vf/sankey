@@ -1,0 +1,105 @@
+      google.charts.load('current', {
+        'packages': ['sankey']
+      });
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'From');
+        data.addColumn('string', 'To');
+        data.addColumn('number', 'Weight');
+        data.addRows([
+          ['Novo Banco (vendido SONAE IM em 2016)', 'FCR ESV II', 56.23],
+          ['Empresas,trusts familiares e indivíduos', 'FCR ESV II', 31.77],
+          ['Novo Banco (vendido SONAE IM em 2016)', 'FCR ESV III', 43.45],
+          ['Empresas,trusts familiares e indivíduos', 'FCR ESV III', 33.55],
+          ['Novo Banco', 'FCR ESV Inovação & Internacionalização', 5.00],
+          ['FINOVA - Fundo de Apoio ao Financiamento à Inovação', 'FCR ESV Inovação & Internacionalização', 5.00],
+          ['FINOVA - Fundo de Apoio ao Financiamento à Inovação', 'FCR ISTART - I', 1.50],
+          ['Brisa, SA', 'FCR ISTART - I', 0.30],
+          ['Caixa Capital - Sociedade de Capital de Risco, SA', 'FCR ISTART - I', 0.30],
+          ['Novo Banco', 'FCR ISTART - I', 0.30],
+          ['Novabase Capital SCR, SA ', 'FCR ISTART - I', 0.30],
+          ['Taguspark, SA ', 'FCR ISTART - I', 0.30],
+          ['FINOVA - Fundo de Apoio ao Financiamento à Inovação', 'FCR Portugal Ventures Universitas', 2.60],
+          ['Portugal Capital Ventures - Sociedade de Capital de Risco, SA', 'FCR Portugal Ventures Universitas', 0.51],
+          ['INDEG/ISCTE', 'FCR Portugal Ventures Universitas', 0.09],
+          ['FCR Empreender Mais', 'FCR Portugal Ventures Universitas', 0.09],
+          ['Safeinterest', 'FCR Portugal Ventures Universitas', 0.09],
+          ['Sindicato Nac. Quadros e Técnicos Bancários', 'FCR Portugal Ventures Universitas', 0.09],
+          ['AIP –CCI', 'FCR Portugal Ventures Universitas', 0.09],
+          ['Ass. p/Desenvolvimento e Investigação de Viseu ', 'FCR Portugal Ventures Universitas', 0.09],
+          ['ANJE', 'FCR Portugal Ventures Universitas', 0.09],
+          ['FINOVA - Fundo de Apoio ao Financiamento à Inovação', 'FCR Portugal Ventures Early Stages', 4.90],
+          ['Portugal Capital Ventures - Sociedade de Capital de Risco, SA', 'FCR Portugal Ventures Early Stages', 2.26],
+          ['FINOVA - Fundo de Apoio ao Financiamento à Inovação', 'FCR Portugal Ventures ACTEC II', 5.45],
+          ['FCR Portugal Ventures ACTEC', 'FCR Portugal Ventures ACTEC II', 1.98],
+          ['BPI', 'FCR Portugal Ventures ACTEC II', 0.36],
+          ['FINOVA - Fundo de Apoio ao Financiamento à Inovação', 'FCR Portugal Ventures Indústrias Criativas', 3.00],
+          ['Portugal Capital Ventures - Sociedade de Capital de Risco, SA', 'FCR Portugal Ventures Indústrias Criativas', 3.00],
+          ['FINOVA - Fundo de Apoio ao Financiamento à Inovação', 'FCR Portugal Ventures Turismo Inovação', 3.00],
+          ['TP', 'FCR Portugal Ventures Turismo Inovação', 1.80],
+          ['BPI', 'FCR Portugal Ventures Turismo Inovação', 0.60],
+          ['Desconhecido', 'FCR Portugal Ventures Turismo Inovação', 0.60],
+          ['FINOVA - Fundo de Apoio ao Financiamento à Inovação', 'FCR Portugal Ventures Internacionalização', 7.11],
+          ['Portugal Capital Ventures - Sociedade de Capital de Risco, SA', 'FCR Portugal Ventures Internacionalização', 5.93],
+          ['Desconhecido', 'FCR Portugal Ventures Internacionalização', 1.18],
+          ['FINOVA - Fundo de Apoio ao Financiamento à Inovação', 'FCR Portugal Ventures Biocant', 2.00],
+          ['Portugal Capital Ventures - Sociedade de Capital de Risco, SA', 'FCR Portugal Ventures Biocant', 1.50],
+          ['Desconhecido', 'FCR Portugal Ventures Biocant', 0.50],
+          ['FINOVA - Fundo de Apoio ao Financiamento à Inovação', 'FCR Critical Ventures I', 3.50],
+          ['Portugal Capital Ventures - Sociedade de Capital de Risco, SA', 'FCR Critical Ventures I', 1.25],
+          ['Desconhecido', 'FCR Critical Ventures I', 2.25],
+          ['IAPMEI', 'FCR Fast Change', 6.25],
+          ['FCR Change Partners I', 'FCR Fast Change', 1.25],
+          ['Change Partners, SCR, S.A', 'FCR Fast Change', 1.50],
+          ['FINOVA - Fundo de Apoio ao Financiamento à Inovação', 'FCR Fast Change II', 2.50],
+          ['Desconhecido', 'FCR Fast Change II', 2.50],
+          ['FINOVA - Fundo de Apoio ao Financiamento à Inovação', 'FCR Beta Ciências da Vida', 1.75],
+          ['Desconhecido', 'FCR Beta Ciências da Vida', 0.75],
+          ['DST', 'FCR Minho Inovação e Internacionalização', 1.72],
+          ['FINOVA - Fundo de Apoio ao Financiamento à Inovação', 'FCR Minho Inovação e Internacionalização', 2.00],
+          ['PKM', 'FCR Minho Inovação e Internacionalização', 0.14],
+          ['2BPARTNER - Sociedade de Capital de Risco, SA', 'FCR Minho Inovação e Internacionalização', 0.14],
+          ['FINOVA - Fundo de Apoio ao Financiamento à Inovação', 'FCR ASK Celta', 5.00],
+          ['Desconhecido', 'FCR ASK Celta', 5.00],
+          ['FINOVA - Fundo de Apoio ao Financiamento à Inovação', 'FCR ASK Capital', 6.50],
+          ['Desconhecido', 'FCR ASK Capital', 4.50],
+          ['FINOVA - Fundo de Apoio ao Financiamento à Inovação', 'FCR Novabase Inovação e Internacionalização', 5.50],
+          ['Novabase Capital SCR, SA ', 'FCR Novabase Inovação e Internacionalização', 5.86],
+          ['IAPMEI', 'FCR Novabase Capital', 5.00],
+          ['Novabase Capital SCR, SA ', 'FCR Novabase Capital', 2.14],
+          ['Caixa Capital - Sociedade de Capital de Risco, SA', 'FCR Empreender Mais ', 25.00],
+          ['Caixa Capital - Sociedade de Capital de Risco, SA', 'FCR Caixa Tech Transfer Accelerator Ventures', 6],
+          ['FINOVA - Fundo de Apoio ao Financiamento à Inovação', 'FCR Capital Criativo I', 10.00],
+          ['Desconhecido', 'FCR Capital Criativo I', 10.50],
+          ['Portugal Capital Ventures - Sociedade de Capital de Risco, SA', 'FCR Portugal Ventures Global 2', 11.59],
+          ['Desconhecido', 'FCR Portugal Ventures Global 2', 11.59],
+          ['Portugal Capital Ventures - Sociedade de Capital de Risco, SA', 'FCR Portugal Global Ventures', 1.59],
+          ['IAPMEI', 'FCR Portugal Global Ventures', 18.78],
+          ['Portugal Capital Ventures - Sociedade de Capital de Risco, SA', 'FCR Portugal Ventures FIAFEA', 0.10],
+          ['Região Autonoma dos Açores', 'FCR Portugal Ventures FIAFEA', 1.00],
+          ['Portugal Capital Ventures - Sociedade de Capital de Risco, SA', 'FCR Portugal Ventures Finicia', 1.20],
+          ['IAPMEI', 'FCR Portugal Ventures Finicia', 2.80],
+          ['Portugal Capital Ventures - Sociedade de Capital de Risco, SA', 'Portugal Ventures (Rotação de Carteiras)', 30.30],
+          ['PORTUGAL VENTURE CAPITAL INITIATIVE SICAV', 'Pathena SICAR', 10.04],
+          ['BPI', 'Pathena SICAR', 10.04],
+          ['Desconhecido', 'Pathena SICAR', 35.71],
+          ['BPI', 'Fundo F-HITEC', 0.50],
+          ['Caixa Capital - Sociedade de Capital de Risco, SA', 'Fundo F-HITEC', 0.25],
+          ['SONAE Capital', 'Fundo F-HITEC', 0.25],
+          ['SIBS', 'Fundo F-HITEC', 0.05],
+          ['Brisa, SA', 'Fundo F-HITEC', 0.08],
+          ['Fundo Pensões Santander', 'Fundo F-HITEC', 0.25],
+          ['Desconhecido', 'Fundo F-HITEC', 2.11],
+        ]);
+
+        // Sets chart options.
+        var options = {
+          width: 600,
+        };
+
+        // Instantiates and draws our chart, passing in some options.
+        var chart = new google.visualization.Sankey(document.getElementById('sankey_basic'));
+        chart.draw(data, options);
+      }
